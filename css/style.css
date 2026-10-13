@@ -1,0 +1,131 @@
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    min-height: 100%;
+    background: #f6f1e5;
+    color: #344b38;
+    font-family: ui-monospace, Consolas, monospace;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    padding: clamp(12px, 3vh, 24px);
+    padding-bottom: env(safe-area-inset-bottom);
+}
+
+.app {
+    width: min(100%, 450px);
+    text-align: center;
+}
+
+h1 {
+    font-size: clamp(22px, 5vw, 30px);
+    margin: 8px 0;
+}
+
+header p,
+.hint {
+    font-size: 12px;
+    opacity: .75;
+}
+
+.hud {
+    display: flex;
+    justify-content: space-around;
+    margin: 15px 0;
+    font-size: 12px;
+}
+
+.hud strong {
+    display: block;
+    font-size: 24px;
+    margin-top: 4px;
+}
+
+.arena {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 3/4;
+    border: 5px solid #47634b;
+    background: #e9e3cc;
+    overflow: hidden;
+    box-shadow: 6px 6px 0 #b9c3a5;
+}
+
+canvas {
+    display: block;
+    width: 100%;
+    height: 100%;
+    touch-action: none;
+    image-rendering: pixelated;
+}
+
+.overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(247, 242, 222, .94);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 18px;
+    padding: 20px;
+}
+
+.overlay[hidden] {
+    display: none;
+}
+
+h2 {
+    font-size: 30px;
+    margin: 0;
+}
+
+.overlay p {
+    line-height: 2;
+}
+
+button {
+    font: 900 16px ui-monospace, monospace;
+    background: #4d7653;
+    color: white;
+    border: 3px solid #2a4430;
+    padding: 14px 22px;
+    box-shadow: 4px 4px 0 #2a4430;
+    cursor: pointer;
+    touch-action: manipulation;
+}
+
+button:active {
+    transform: translate(3px, 3px);
+    box-shadow: 1px 1px 0 #2a4430;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin: 0 0 14px;
+}
+
+.controls button {
+    font-size: 12px;
+    padding: 9px 13px;
+}
+
+.controls button:disabled {
+    opacity: .4;
+    cursor: not-allowed;
+}
+
+.controls #end {
+    background: #a35e50;
+    border-color: #693b33;
+    box-shadow: 4px 4px 0 #693b33;
+}
